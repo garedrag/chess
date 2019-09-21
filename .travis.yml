@@ -2,3 +2,19 @@ language: node_js
 node_js:
   - "0.8"
   - "0.10"
+  - "6.9"
+  - "10.12"
+deploy:
+  provider: elasticbeanstalk
+  skip_cleanup: true
+  access_key_id:
+    secure: "$access_key_id"
+  secret_access_key:
+    secure: "$secret_access_key"
+  region: "eu-central-1"
+  app: "mychess"
+  env: "Mychess-env"
+  bucket_name: "lv428chess"
+after_deploy:
+  - npm start
+  - npm run client
