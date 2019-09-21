@@ -1,18 +1,18 @@
 {
   "systemLog": {
     "destination": "file",
-    "path": "C:/Users/tkust/dbs/test/test.log",
+    "path": "tmp/dbs/test/test.log",
     "logAppend": true
   },
   "storage": {
     "engine": "mmapv1",
-    "dbPath": "C:/Users/tkust/dbs/test",
+    "dbPath": "tmp/dbs/test",
     "journal": {
       "enabled": true
     }
   },
   "net": {
-    "bindIp": "127.0.0.1",
+    "bindIp": "18.195.28.6",
     "port": "27017"
   }
 }
