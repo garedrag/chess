@@ -8,6 +8,16 @@ node_js:
 before_install:
   - sudo apt-get install -y zip
 script:
+  - sudo yum install -y gcc-c++ make
+  - curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+	- sudo yum -y install nodejs
+	- sudo yum -y install git
+	- sudo yum -y install mc
+	-	cd /var/app/current/
+	- sudo npm install
+#			  npm build
+#			  sudo npm run build
+ #             npm start & sudo npm run client
   - npm install
   - npm run build
   - zip -r eb.zip *  
