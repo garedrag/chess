@@ -15,7 +15,7 @@
     "test": "npm run test-client && npm run test-common && npm run test-server"
   },
   "devDependencies": {
-    "angular-mocks": "1.6.x",
+    "angular-mocks": "1.5.x",
     "browserify": "13.0.0",
     "chai": "3.5.0",
     "del": "2.2.0",
@@ -43,7 +43,7 @@
     "watchify": "3.7.0"
   },
   "dependencies": {
-    "angular": "1.6.x",
+    "angular": "1.5.x",
     "angular-animate": "1.5.3",
     "angular-resource": "1.5.0",
     "angular-route": "1.5.0",
