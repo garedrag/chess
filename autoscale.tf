@@ -9,7 +9,7 @@ resource "aws_instance" "web" {
   ami                    = "${lookup(var.amis, var.region)}"
   count                  = "${var.counts}"
   key_name               = "${var.key_name}"
-  vpc_security_group_ids = ["${aws_security_group.instance.id}+Trevis"]
+  vpc_security_group_ids = ["${aws_security_group.instance.id}"]
   source_dest_check      = false
   instance_type          = "t2.micro"
   tags = {
@@ -29,7 +29,7 @@ resource "aws_instance" "web" {
 
 ### Creating Security Group for EC2
 resource "aws_security_group" "instance" {
-  name = "gare-terraform-example-instance+Trevis"
+  name = "gare-terraform-example-instance-Trevis"
   ingress {
     from_port   = 8080
     to_port     = 8080
@@ -75,7 +75,7 @@ resource "aws_security_group" "instance" {
 resource "aws_launch_configuration" "example" {
   image_id        = "${lookup(var.amis, var.region)}"
   instance_type   = "t2.micro"
-  security_groups = ["${aws_security_group.instance.id}+Trevis"]
+  security_groups = ["${aws_security_group.instance.id}"]
   key_name        = "${var.key_name}"
   user_data       = <<-EOF
               #!/bin/bash
@@ -102,7 +102,7 @@ resource "aws_autoscaling_group" "example" {
   availability_zones   = "${data.aws_availability_zones.all.names}"
   min_size             = 2
   max_size             = 10
-  load_balancers       = ["${aws_elb.example.name}+Trevis"]
+  load_balancers       = ["${aws_elb.example.name}"]
   health_check_type    = "ELB"
   tag {
     key                 = "Name"
@@ -113,7 +113,7 @@ resource "aws_autoscaling_group" "example" {
 
 ## Security Group for ELB
 resource "aws_security_group" "elb" {
-  name = "gare-terraform-example-elb+Trevis"
+  name = "gare-terraform-example-elb-Trevis"
   egress {
     from_port   = 0
     to_port     = 0
