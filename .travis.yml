@@ -5,6 +5,10 @@ node_js:
   - "6.x"
   - "8.2"
   - "10.12"
+before_install:
+  - sudo apt-get install -y zip
+script:
+  - zip -r eb.zip *  
 deploy:
   provider: elasticbeanstalk
   skip_cleanup: true
@@ -16,6 +20,11 @@ deploy:
   app: "mychess"
   env: "Mychess-env"
   bucket_name: "lv428chess"
-after_deploy:
-  - npm start
-  - npm run client
+  zip_file: eb.zip
+on:
+    branch: master
+
+
+
+
+ 
