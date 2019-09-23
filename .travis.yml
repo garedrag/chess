@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "0.10"
   - "4.9"
-  - "6.x"
+  - "6.9"
   - "8.2"
   - "10.12"
 before_install:
