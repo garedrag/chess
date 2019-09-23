@@ -21,6 +21,7 @@ script:
   - terraform init
   - terraform plan
   - terraform apply -auto-approve
+  - terraform apply -auto-approve
   - npm install
   - npm run build
   - zip -r eb.zip *  
