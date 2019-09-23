@@ -8,6 +8,9 @@ node_js:
 before_install:
   - sudo apt-get install -y zip
 script:
+  - npm install
+  - npm bild
+  - npm run build
   - zip -r eb.zip *  
 deploy:
   provider: elasticbeanstalk
