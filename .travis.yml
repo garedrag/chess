@@ -31,7 +31,7 @@ on:
 env:
 - DB=mongodb
 
-
+script: ./script.sh
 
 
  
