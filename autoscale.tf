@@ -144,7 +144,7 @@ resource "aws_security_group" "elb" {
 }
 ### Creating ELB
 resource "aws_elb" "example" {
-  name               = "terraform-asg-example+Trevis"
+  name               = "terraform-asg-example-Trevis"
   security_groups    = ["${aws_security_group.elb.id}"]
   availability_zones = "${data.aws_availability_zones.all.names}"
   health_check {
