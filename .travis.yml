@@ -20,7 +20,7 @@ script:
   - export AWS_SECRET_ACCESS_KEY="$secret_access_key"
   - terraform init
   - terraform plan
-  - terraform apply -auto-approve
+  - terraform destroy -auto-approve
   - terraform apply -auto-approve
   - npm install
   - npm run build
