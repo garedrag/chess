@@ -48,7 +48,7 @@ var html = {
 
 var env = Object.assign({
   NODE_ENV: 'development',
-  API_URL: '//127.0.0.1:8081'
+  API_URL: '//0.0.0.0:8081'
 }, process.env);
 
 module.exports = {
