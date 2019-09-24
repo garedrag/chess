@@ -39,8 +39,8 @@ deploy:
   zip_file: eb.zip
 on:
     branch: master
-env:
-  - DB=mongodb
+#env:
+#  - DB=mongodb
 
 
 
