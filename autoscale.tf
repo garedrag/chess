@@ -29,7 +29,7 @@ resource "aws_instance" "web" {
 
 ### Creating Security Group for EC2
 resource "aws_security_group" "instance" {
-  name = "gare-terraform-example-instance-Trevis"
+  name = "gare-terraform-example-instance-Trevis2"
   ingress {
     from_port   = 8080
     to_port     = 8080
