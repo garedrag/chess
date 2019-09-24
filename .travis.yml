@@ -34,7 +34,7 @@ deploy:
     secure: "$secret_access_key"
   region: "eu-central-1"
   app: "mychess"
-  env: "Mychess-env1"
+  env: "Mychess-env"
   bucket_name: "lv428chess"
   zip_file: eb.zip
 on:
