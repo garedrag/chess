@@ -29,7 +29,7 @@ resource "aws_instance" "web" {
 
 ### Creating Security Group for EC2
 resource "aws_security_group" "instance" {
-  name = "gare-terraform-example-instance-Trevis"
+  name = "gare-terraform-example-instance-Trev"
   ingress {
     from_port   = 8080
     to_port     = 8080
@@ -113,7 +113,7 @@ resource "aws_autoscaling_group" "example" {
 
 ## Security Group for ELB
 resource "aws_security_group" "elb" {
-  name = "gare-terraform-example-elb-Trev"
+  name = "gare-terraform-example-elb-Trevis"
   egress {
     from_port   = 0
     to_port     = 0
@@ -144,7 +144,7 @@ resource "aws_security_group" "elb" {
 }
 ### Creating ELB
 resource "aws_elb" "example" {
-  name               = "terraform-asg-example-Trev"
+  name               = "terraform-asg-example-Trevi"
   security_groups    = ["${aws_security_group.elb.id}"]
   availability_zones = "${data.aws_availability_zones.all.names}"
   health_check {
