@@ -20,6 +20,7 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
---script:
-    npm start & npm run client
+--script: |
+    npm start 
+    npm run client
   displayName: 'start back and front'
