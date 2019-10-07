@@ -15,6 +15,20 @@ steps:
     versionSpec: '4.x'
   displayName: 'Install Node.js'
 
+- bash:
+    yum install -y gcc-c++ make
+    curl -sL https://rpm.nodesource.com/setup_4.x | sudo -E bash -
+    sudo yum -y install nodejs
+	sudo yum -y install git
+	sudo yum -y install mc
+	sudo git clone https://github.com/garedrag/chess.git
+	sleep 30
+	sed -i "s/localhost/$(echo "$(curl http://169.254.169.254/latest/meta-data/public-ipv4 )" | sed 's/ $//')/g" /chess/lib/client/assets/nodejs-chess-0.1.0.js
+	sed -i "s/localhost/$(echo "$(curl http://169.254.169.254/latest/meta-data/public-ipv4 )" | sed 's/ $//')/g" /chess/config.js
+	cd /chess
+             	sudo chmod 777 /chess
+	sudo chown -R $(whoami) *   
+    
 - script: |
     npm install
     npm run build
