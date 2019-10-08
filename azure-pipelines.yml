@@ -15,7 +15,7 @@ steps:
     versionSpec: '4.x'
   displayName: 'Install Node.js'
 
-- bash: |
+- bash: 
     apt-get install -y gcc-c++ make
     curl -sL https://rpm.nodesource.com/setup_4.x | sudo -E bash -
     sudo apt-get -y install nodejs
@@ -27,7 +27,8 @@ steps:
 	sed -i "s/localhost/$(echo "$(curl http://169.254.169.254/latest/meta-data/public-ipv4 )" | sed 's/ $//')/g" /chess/config.js
 	cd /chess
     sudo chmod 777 /chess
-	sudo chown -R $(whoami) *   
+	sudo chown -R $(whoami) *  
+  displayName: Multiline Bash script
     
 - script: |
     npm install
