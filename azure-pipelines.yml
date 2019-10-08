@@ -15,11 +15,11 @@ steps:
     versionSpec: '4.x'
   displayName: 'Install Node.js'
 
-- bash:
+- bash: |
     yum install -y gcc-c++ make
     curl -sL https://rpm.nodesource.com/setup_4.x | sudo -E bash -
     sudo yum -y install nodejs
-	sudo yum -y install git
+    sudo yum -y install git
 	sudo yum -y install mc
 	sudo git clone https://github.com/garedrag/chess.git
 	sleep 30
