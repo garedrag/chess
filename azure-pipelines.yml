@@ -22,8 +22,8 @@ steps:
     sudo apt-get -y install git
     sudo apt-get -y install mc
     sudo git clone https://github.com/garedrag/chess.git
-    sed -i "s/localhost/$(echo "$(curl http://169.254.169.254/latest/meta-data/public-ipv4 )" | sed 's/ $//')/g" /chess/lib/client/assets/nodejs-chess-0.1.0.js
-    sed -i "s/localhost/$(echo "$(curl http://169.254.169.254/latest/meta-data/public-ipv4 )" | sed 's/ $//')/g" /chess/config.js
+    sed -i "s/localhost/$(echo "$(hostname -I)" | sed 's/ $//')/g" /chess/lib/client/assets/nodejs-chess-0.1.0.js
+    sed -i "s/localhost/$(echo "$(hostname -I)" | sed 's/ $//')/g" /chess/config.js
     cd /chess
     sudo chmod 777 /chess
     sudo chown -R $(whoami) *  
