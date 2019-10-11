@@ -13,4 +13,4 @@ npm build
 sudo npm run build
 sudo chmod 777 /chess
 sudo chown -R $(whoami) *
-npm start & sudo npm run client
+# npm start & sudo npm run client
